@@ -1,0 +1,5 @@
+print ".pdbrc.py started"
+alias dr pp dir(%1)
+alias loc locals().keys()
+alias printdict for key, value in %1.items(): print "%s : %s" % (key, value)
+alias pd printdict
