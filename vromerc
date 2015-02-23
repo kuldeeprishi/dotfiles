@@ -1,7 +1,13 @@
 """ .vromerc example file
 
-map  j 10j
+map j 10j
+map k 10k
+map J gT
+map K gt
+map < H
+map > L
 unmap <C-f>
+unmap <C-p>
 
 
 " customize next/prev page pattern
@@ -22,7 +28,7 @@ set showstatus=0
 set searchengines={"google":"http://www.google.com/search?q={{keyword}}", "yahoo":"http://search.yahoo.com/search?p={{keyword}}","wikipedia":"http://en.wikipedia.org/wiki/{{keyword}}","answers":"http://www.answers.com/main/ntquery?s={{keyword}}","yubnub":"http://yubnub.org/parser/parse?command={{keyword}}"}
 
 " Disable Vrome in those sites, Multiple URLs can be separated with ,
-set disablesites=mail.google.com, reader.google.com
+set disablesites=mail.google.com, reader.google.com, http://127.0.0.1:8080/debug?port=5858
 
 
 " Follow new opened tab or not. 1 follow, 0 doesn't
