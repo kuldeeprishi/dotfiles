@@ -1,0 +1,42 @@
+{
+	"always_prompt_for_file_reload": false,
+	"always_show_minimap_viewport": true,
+	"auto_complete_selector": "source - comment, meta.tag - punctuation.definition.tag.begin",
+	"auto_complete_triggers":
+	[
+		{
+			"characters": "ng-controller=\"*",
+			"selector": "punctuation.definition.string"
+		}
+	],
+	"bold_folder_labels": false,
+	"color_scheme": "Packages/Color Scheme - Default/LAZY.tmTheme",
+	"default_line_ending": "unix",
+	"enable_tab_scrolling": false,
+	"ensure_newline_at_eof_on_save": true,
+	"fade_fold_buttons": false,
+	"font_size": 9,
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+
+	],
+	"indent_guide_options":
+	[
+		"draw_normal",
+		"draw_active"
+	],
+	"match_brackets_content": true,
+	"original_color_scheme": "Packages/Color Scheme - Default/Monokai Bright.tmTheme",
+	"rulers":
+	[
+		79
+	],
+	"tab_size": 4,
+	"translate_tabs_to_spaces": true,
+	"trim_automatic_white_space": true,
+	"trim_trailing_white_space_on_save": true,
+	"word_wrap": true
+}
+
