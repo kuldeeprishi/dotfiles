@@ -10,3 +10,4 @@ sidebar enhancements
 HTML-CSS-JS Prettify
 Pretty JSON  (sudo apt-get install jq)
 Emmet
+fuzzyfilenav (settings Default (Linux).sublime-keymap)
