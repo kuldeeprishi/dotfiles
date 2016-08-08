@@ -1,0 +1,69 @@
+{
+    // Restart Sublime Text to pick up changes to these settings.
+
+    // Scope used to flash a matching bracket section.
+    "match_scope": "comment",
+
+    // Scope used to flash an unmatched bracket.
+    "error_scope": "invalid.illegal",
+
+    // How far to keep looking for a match - number of characters.
+    // Reduce this to improve responsiveness.
+    "backtrack_limit": 100000,
+
+    // How long to flash the screen for in ms.
+    "flash_time": 2000,
+
+    // Brackets to match with the context to apply.
+    // Include specifies scopes that must be present at the point of the
+    // bracket to invoke the rule.
+    // Exclude specifies scopes that must not be present to invoke the rule.
+    // The list is traversed in order so more general rules must come first.
+    "brackets": [
+        // General case - source files, but ignore comments and strings.
+        {
+            "bracket": ")",
+            "partner": "(",
+            "include": [],
+            "exclude": ["comment", "string"]
+        },
+        {
+            "bracket": "]",
+            "partner": "[",
+            "include": [],
+            "exclude": ["comment", "string"]
+        },
+        {
+            "bracket": "}",
+            "partner": "{",
+            "include": [],
+            "exclude": ["comment", "string"]
+        },
+        // Now handle brackets within comments.
+        {
+            "bracket": ")",
+            "partner": "(",
+            "include": ["comment"],
+            "exclude": ["string"]
+        },
+        {
+            "bracket": "]",
+            "partner": "[",
+            "include": ["comment"],
+            "exclude": ["string"]
+        },
+        {
+            "bracket": "}",
+            "partner": "{",
+            "include": ["comment"],
+            "exclude": ["string"]
+        },
+        // Special case for HTML tags.
+        {
+            "bracket": ">",
+            "partner": "<",
+            "include": ["html"],
+            "exclude": ["comment", "string"]
+        }
+    ]
+}

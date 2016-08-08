@@ -1,0 +1,11 @@
+anaconda
+git
+gitgutter
+local history
+bracket flasher
+bracket highlighter
+bracket guard
+ctags
+sidebar enhancements
+HTML-CSS-JS Prettify
+Pretty JSON  (sudo apt-get install jq)
