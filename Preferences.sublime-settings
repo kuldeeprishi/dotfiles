@@ -10,7 +10,7 @@
 		}
 	],
 	"bold_folder_labels": false,
-	// "color_scheme": "Packages/Color Scheme - Default/LAZY.tmTheme",
+	"color_scheme": "Packages/Color Scheme - Default/Mac Classic.tmTheme",,
 	"default_line_ending": "unix",
 	"enable_tab_scrolling": false,
 	"ensure_newline_at_eof_on_save": true,
@@ -37,6 +37,7 @@
 	"translate_tabs_to_spaces": true,
 	"trim_automatic_white_space": true,
 	"trim_trailing_white_space_on_save": true,
-	"word_wrap": true
+	"word_wrap": true,
+	"ignored_packages": ["Vintage"]
 }
 
