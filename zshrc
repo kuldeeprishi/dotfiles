@@ -106,3 +106,4 @@ export SHELL='zsh'
 export NVM_DIR="/home/kuldeeprishi/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
+source ~/.git-flow-completion.zsh
