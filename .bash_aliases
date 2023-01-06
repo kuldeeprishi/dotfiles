@@ -31,6 +31,12 @@ alias chrome='google-chrome& > /dev/null'
 alias tailf="tail -f"
 
 alias rm="echo Use 'del' or 'deldir', or the full path i.e. '/bin/rm'"
-alias del="rmtrash"
-alias deldir='rmdirtrash'
+alias del="trash-put"
 alias prp="pipenv run python"
+
+alias tf='terraform'
+alias awsp="source _awsp"
+
+# KUBERNETES
+alias k=kubectl
+
