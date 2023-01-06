@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/kuldeeprishi/.oh-my-zsh
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -46,12 +46,19 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git python django command-not-found compleat jira pep8 pylint web-search rand-quote)
+plugins=(
+  git
+  python
+  command-not-found
+  compleat
+  web-search
+  zsh-syntax-highlighting
+  zsh-autosuggestions
+)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -76,34 +83,54 @@ if [ -f ~/.bash_aliases ]; then
    . ~/.bash_aliases
 fi
 
-JIRA_URL='https://delhivery.atlassian.net'
+export OAUTHLIB_INSECURE_TRANSPORT=1
+export BETTER_EXCEPTIONS=1
 
-export ENV=test
+autoload -U +X bashcompinit && bashcompinit
 
-export WORKON_HOME=$HOME/virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
-export PIP_VIRTUALENV_BASE=$HOME/virtualenvs
+export GOPATH='$HOME/go'
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+eval "$(pyenv init -)"
 
-#sudo -Sb mongod --port 27017 --dbpath /var/lib/mongodb/rs00 --replSet rs0  --httpinterface --rest --smallfiles --oplogSize 128 >/dev/null;
-#sudo -Sb mongod --port 27018 --dbpath /var/lib/mongodb/rs01 --replSet rs0  --httpinterface --rest --smallfiles --oplogSize 128 >/dev/null;
-#sudo -Sb mongod --port 27019 --dbpath /var/lib/mongodb/rs02 --replSet rs0  --httpinterface --rest --smallfiles --oplogSize 128 >/dev/null;
+export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV=true
+export WORKON_HOME=~/venvs
+mkdir -p $WORKON_HOME
+pyenv virtualenvwrapper_lazy
 
-# Did You Know ??
-echo "Did you know that: "; whatis $(ls /bin | shuf -n 1)
+export VIRTUALENVWRAPPER_PYTHON=$HOME'/.pyenv/shims/python'
+export KUBE_CONFIG_PATH=~/.kube/config
 
-export EDITOR='vim'
-export SHELL='zsh'
+export VIRTUALENVWRAPPER_PYTHON=$HOME'/.pyenv/shims/python'
+export KUBE_CONFIG_PATH=~/.kube/config
 
-export NVM_DIR="/home/kuldeeprishi/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+source /Users/kuldeep/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/share/antigen/antigen.zsh
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+export PATH="/usr/local/opt/influxdb@1/bin:$PATH"
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+export PATH="$HOME/kafka/bin:$PATH"
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
+
+source <(kubectl completion zsh)
 source ~/.git-flow-completion.zsh
+
+selected_profile="$(cat ~/.awsp)"
+
+if [ -z "$selected_profile" ]
+then
+  unset AWS_PROFILE
+else
+  export AWS_PROFILE="$selected_profile"
+fi
+
+
+
+
+
+
+
